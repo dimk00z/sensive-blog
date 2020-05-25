@@ -25,7 +25,6 @@ def serialize_tag(tag):
     }
 
 
-    posts_ids = [post.id for post in posts]
 def index(request):
     most_popular_posts = Post.objects.popular() \
         .prefetch_related('author')[:5] \
